@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}" />
+</head>
+
+<body>
+<div class="navbar">
+    <div class="logo">
+        <img th:src="@{/images/hospital_icon.png}" alt="Hospital Logo"/>
+    </div>
+
+    <nav>
+        <a href="/home">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="/appointment">Запись</a>
+        <a href="#staff">Персонал</a>
+        <a href="#schedule">График</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#medicine">Лекарства</a>
+    </nav>
+
+    <div class="user-info">
+        <span th:text="${authenticatedUsername}" class="username">Гость</span>
+        <form method="POST" action="/logout" style="display: inline;">
+            <button class="auth-button" type="submit">Выйти</button>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Заявка на запись одобрена! При необходимости мы Вас оповестим!</h1>
+</div>
+
+<footer>
+    <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+</footer>
+</body>
+</html>

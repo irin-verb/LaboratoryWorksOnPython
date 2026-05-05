@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68274F29-F2A0-4659-8F8D-4EFF1431738E}|lab5.pyproj|C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab5\\lab5.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{68274F29-F2A0-4659-8F8D-4EFF1431738E}|lab5.pyproj|solutionrelative:lab5.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lab5.py",
+              "DocumentMoniker": "C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab5\\lab5.py",
+              "RelativeDocumentMoniker": "lab5.py",
+              "ToolTip": "C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab5\\lab5.py",
+              "RelativeToolTip": "lab5.py",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-11T17:50:48.642Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

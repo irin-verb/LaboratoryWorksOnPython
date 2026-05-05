@@ -1,0 +1,109 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Запись к врачу</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}" />
+</head>
+
+<body>
+<div class="navbar">
+    <div class="logo">
+        <img th:src="@{/images/hospital_icon.png}" alt="Hospital Logo"/>
+    </div>
+
+    <nav>
+        <a href="/home">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="/appointment">Запись</a>
+        <a href="#staff">Персонал</a>
+        <a href="#schedule">График</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#medicine">Лекарства</a>
+    </nav>
+
+    <div class="user-info">
+        <span th:text="${authenticatedUsername}" class="username">Гость</span>
+        <form method="POST" action="/logout" style="display: inline;">
+            <button class="auth-button" type="submit">Выйти</button>
+        </form>
+    </div>
+</div>
+
+<h1 style="text-align: center; margin: 100px auto auto">Запись к врачу</h1>
+
+<div class="form-container">
+    <form method="POST" th:action="@{/appointment}" th:object="${appointment}">
+        <div class="form-group">
+            <h3>Выберите врача:</h3>
+            <select name="doctor" id="doctorSelect">
+                <option value="" disabled selected>Выберите врача</option>
+                <option th:each="doctor : ${doctors}"
+                        th:value="${doctor.id}"
+                        th:text="${doctor.fullName}">Doctor Name</option>
+            </select>
+            <span class="validationError" th:if="${#fields.hasErrors('schedule.doctor')}" th:errors="*{schedule.doctor}">Имя некорректно</span>
+        </div>
+
+
+        <div class="form-group">
+            <h3>Выберите время записи:</h3>
+            <select th:field="*{schedule.date}" id="timeSelect">
+                <option value="" disabled selected>Выберите время</option>
+            </select>
+            <span class="validationError" th:if="${#fields.hasErrors('schedule.date')}" th:errors="*{schedule.date}">Ошибка выбора времени</span>
+        </div>
+
+        <input type="hidden" th:field="*{schedule.id}" id="selectedScheduleId"/>
+
+        <div class="form-group">
+            <h3>Ваше имя:</h3>
+            <input type="text" th:field="*{clientName}" />
+            <span class="validationError" th:if="${#fields.hasErrors('clientName')}" th:errors="*{clientName}">Имя некорректно</span>
+        </div>
+
+        <div class="form-group">
+            <h3>Ваша фамилия:</h3>
+            <input type="text" th:field="*{clientSurname}" />
+            <span class="validationError" th:if="${#fields.hasErrors('clientSurname')}" th:errors="*{clientSurname}">Фамилия некорректна</span>
+        </div>
+
+        <div class="form-group">
+            <h3>Ваш номер телефона:</h3>
+            <input type="tel" th:field="*{clientPhone}" />
+            <span class="validationError" th:if="${#fields.hasErrors('clientPhone')}" th:errors="*{clientPhone}">Телефон некорректен</span>
+        </div>
+
+        <div class="form-group">
+            <h3>Краткое описание проблемы:</h3>
+            <textarea th:field="*{clientDescription}" rows="4" cols="50"></textarea>
+            <span class="validationError" th:if="${#fields.hasErrors('clientDescription')}" th:errors="*{clientDescription}">Описание некорректно</span>
+        </div>
+
+        <div style="text-align: center; width: 70%; margin: 0 auto;">
+            <button style="width: 100%; font-size: 20px" type="submit">Записаться</button>
+        </div>
+    </form>
+</div>
+</body>
+
+<script>
+    document.getElementById('doctorSelect').addEventListener('change', function() {
+        var doctorId = this.value;
+
+        fetch('/appointment/available-times/' + doctorId)
+            .then(response => response.json())
+            .then(data => {
+                var timeSelect = document.getElementById('timeSelect');
+                timeSelect.innerHTML = '';
+
+                data.forEach(function(time) {
+                    var option = document.createElement('option');
+                    option.value = time;
+                    option.textContent = time;
+                    timeSelect.appendChild(option);
+                });
+            });
+    });
+</script>
+
+</html>

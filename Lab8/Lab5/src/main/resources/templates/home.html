@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" th:href="@{/styles/styles.css}" />
+</head>
+
+<body>
+<div class="navbar">
+  <div class="logo">
+    <img th:src="@{/images/hospital_icon.png}" alt="Hospital Logo"/>
+  </div>
+
+  <nav>
+    <a href="/home">О нас</a>
+    <a href="#services">Услуги</a>
+    <a href="/appointment">Запись</a>
+    <a href="#staff">Персонал</a>
+    <a href="#schedule">График</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#medicine">Лекарства</a>
+  </nav>
+
+  <div class="user-info">
+    <span th:text="${authenticatedUsername}" class="username">Гость</span>
+    <form method="POST" action="/logout" style="display: inline;">
+      <button class="auth-button" type="submit">Выйти</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Добро пожаловать в HealthHub!</h1>
+  <h3>Добро пожаловать в HealthHub – вашу виртуальную больницу, где забота о здоровье становится доступнее, чем когда-либо. Мы объединяем новейшие технологии с профессионализмом лучших врачей, чтобы вы могли получить качественную медицинскую помощь, не выходя из дома.
+    Консультации, диагностика и лечение – всё это вы найдёте в одном месте, доступном 24/7. Наши специалисты всегда готовы помочь вам в режиме онлайн, а удобный интерфейс позволяет быстро найти нужную услугу. HealthHub – ваш надёжный партнёр в заботе о здоровье.</h3>
+</div>
+
+<footer>
+  <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявки</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #dddddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr {
+            cursor: pointer; /* Указатель, чтобы показать, что строка кликабельна */
+        }
+
+        tr:hover {
+            background-color: #e0e0e0; /* Цвет фона строки при наведении */
+        }
+
+        a {
+            text-decoration: none; /* Убираем подчеркивание */
+            color: inherit; /* Цвет текста у ссылок будет таким же, как у обычного текста */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Заявки</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Номер расписания</th>
+        <th>Имя клиента</th>
+        <th>Фамилия клиента</th>
+        <th>Номер клиента</th>
+        <th>Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="appointment : ${appointments}" th:onclick="'location.href=\'/appointments/' + ${appointment.id} + '\''">
+        <td th:text="${appointment.id}"></td>
+        <td th:text="${appointment.schedule.getId()}"></td>
+        <td th:text="${appointment.clientName}"></td>
+        <td th:text="${appointment.clientSurname}"></td>
+        <td th:text="${appointment.clientPhone}"></td>
+        <td th:text="${appointment.clientDescription}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

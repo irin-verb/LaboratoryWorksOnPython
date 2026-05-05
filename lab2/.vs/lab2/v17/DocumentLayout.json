@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B249544E-E71B-4A5C-93AC-1B74FCECBA9E}|lab2.pyproj|C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab2\\lab2.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B249544E-E71B-4A5C-93AC-1B74FCECBA9E}|lab2.pyproj|solutionrelative:lab2.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lab2.py",
+              "DocumentMoniker": "C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab2\\lab2.py",
+              "RelativeDocumentMoniker": "lab2.py",
+              "ToolTip": "C:\\__study__\\4_class\\_\u041A\u043E\u043C\u043F_\u043C\u043E\u0434_\\lab2\\lab2.py",
+              "RelativeToolTip": "lab2.py",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAJcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-15T13:47:20.252Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
